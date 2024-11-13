@@ -25,6 +25,7 @@ class Filters extends BaseConfig
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
         'auth' => \App\Filters\Auth::class,
+        'usuarioFilter' => \App\Filters\UsuarioFilter::class,
     ];
 
     /**
@@ -35,7 +36,7 @@ class Filters extends BaseConfig
      */
     public array $globals = [
         'before' => [
-            //'auth' => ['except' => ['Login/authenticate', 'Login/index']]
+            'auth' => ['except' => ['Login/authenticate', 'Login/index']]
             // 'honeypot',
             //'csrf',
             // 'invalidchars',
@@ -67,5 +68,11 @@ class Filters extends BaseConfig
      * Example:
      * 'isLoggedIn' => ['before' => ['account/*', 'profiles/*']]
      */
-    public array $filters = [];
+    public array $filters = [
+        'usuarioFilter' => [
+            'before' => [
+                'usuario/*',
+            ]
+        ]
+    ];
 }

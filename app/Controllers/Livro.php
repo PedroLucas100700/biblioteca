@@ -18,25 +18,37 @@ class Livro extends BaseController
 
     public function index(){
 
-        $pesquisa = $this->request->getPost();
-        if(count($pesquisa) > 0){
-            $livro = $this->livroModel->join('obra', 'livro.id_obra = obra.id')
-            ->orlike('obra.titulo',$pesquisa['pesquisa'])
-            ->orlike('status',$pesquisa['pesquisa'])
-            ->orlike('disponivel',$pesquisa['pesquisa']);
-            $livro = $livro->paginate(10);
-        }else{
-            $livro = $this->livroModel->paginate(10);
-        };
+            $livro = $this->livroModel->select('*, livro.id')
+            ->join('obra', 'livro.id_obra = obra.id')->findAll();
+
 
         $statusdisponivel = LivroModel::STATUSLOCADO;
         $status = LivroModel::STATUSLIVRO;
-
-        foreach($livro as $key => $li){
-
-            $livro["$key"]["disponivel"] = $statusdisponivel[$li['disponivel']];
-        }
         // dd($livro);
+        
+        foreach($livro as $key => $li){
+            $teste = [];
+           array_push($teste, $key);
+           
+           if($li['status'] == 1){
+                $livro[$key]["class_status"] = 'bg bg-success';
+           }
+            else if($li['status'] == 2){
+                $livro[$key]["class_status"] = 'bg bg-danger';
+           }
+               
+           if($li['disponivel'] == 0){
+               $livro[$key]["class_disponivel"] = 'bg bg-danger';
+               
+           }else if($li['disponivel'] == 1){
+               $livro[$key]["class_disponivel"] = 'bg bg-success';;
+            }
+               $livro[$key]["disponivel"] = $statusdisponivel[$li['disponivel']];
+               $livro[$key]["status"] = $status[$li['status']];
+
+            //  dd($livro);
+           }
+        
         $obra = $this->obraModel->findAll();
         $pager = $this->livroModel->pager;
         echo view('_partials/header');
@@ -46,6 +58,7 @@ class Livro extends BaseController
     }
 
     public function editar($id){
+        // dd($id);
         $statusdisponivel = LivroModel::STATUSLOCADO;
         $status = LivroModel::STATUSLIVRO;
         $livro = $this->livroModel->find($id);

@@ -16,17 +16,10 @@ class Autor extends BaseController
     }
 
     public function index(){
-        $pesquisa = $this->request->getPost();
-        if(count($pesquisa) > 0){
-            $dados = $this->autorModel->like('nome',$pesquisa['pesquisa']);
-            $dados = $dados->paginate(10);
-        }else{
-            $dados = $this->autorModel->paginate(10);
-        };
-        $pager = $this->autorModel->pager;
+        $dados = $this->autorModel->findAll();
         echo view('_partials/header');
         echo view('_partials/navbar');
-        echo view('autor/index.php',['listaAutor' => $dados, 'pager' => $pager]);
+        echo view('autor/index.php',['listaAutor' => $dados]);
         echo view('_partials/footer');
     }
 

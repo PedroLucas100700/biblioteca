@@ -2,83 +2,80 @@
 <div id="wrapper">
 
 <!-- Sidebar -->
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark" id="accordionSidebar">
+    <div class="fixed-top navbar-nav bg-gradient-primary sidebar">
+        <!-- Sidebar - Brand -->
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?=base_url('Home/index')?>">
+            <div class="sidebar-brand-icon rotate-n-15">
+                <i class="fas fa-book"></i>
+            </div>
+            <div class="sidebar-brand-text mx-3">Biblioteca</div>
+        </a>
 
-    <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?=base_url('Home/index')?>">
-        <div class="sidebar-brand-icon rotate-n-15">
-            <i class="fas fa-book"></i>
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0">
+
+        <!-- Nav Items -->
+        <li class="nav-item">
+            <a class="nav-link" href="<?=base_url('Aluno/index')?>">
+                <i class="fas fa-fw fa-school"></i>
+                <span>Aluno</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="<?=base_url('Autor/index')?>">
+                <i class="fas fa-fw fa-school"></i>
+                <span>Autor</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="<?=base_url('Emprestimo/index')?>">
+                <i class="fas fa-fw fa-check"></i>
+                <span>Empréstimo</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="<?=base_url('Livro/index')?>">
+                <i class="fas fa-fw fa-book"></i>
+                <span>Livro</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="<?=base_url('Obra/index')?>">
+                <i class="fas fa-fw fa-copy"></i>
+                <span>Obra</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="<?=base_url('Editora/index')?>">
+                <i class="fas fa-fw fa-pen"></i>
+                <span>Editora</span>
+            </a>
+        </li>
+        <li class="nav-item <?php if(!session()->get('acesso') == 1){echo 'visually-hidden';}?>" id="itemUsuario">
+            <a class="nav-link" href="<?=base_url('Usuario/index')?>">
+                <i class="fas fa-fw fa-users"></i>
+                <span>Usuário</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="<?=base_url('Normas/index')?>">
+                <i><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-file-text"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" /><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" /><path d="M9 9l1 0" /><path d="M9 13l6 0" /><path d="M9 17l6 0" /></svg></i>
+                <span>Normas</span>
+            </a>
+        </li>
+        
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block">
+
+        <!-- Sidebar Toggler (Sidebar) -->
+        <div class="text-center d-none d-md-inline">
+            <button class="rounded-circle border-0" id="sidebarToggle"></button>
         </div>
-        <div class="sidebar-brand-text mx-3">Biblioteca</div>
-    </a>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider my-0">
-
-    <!-- Nav Item - Dashboard -->
-    <li class="nav-item active">
-        <a class="nav-link" href="index.html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a>
-    </li>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-
-    <!-- Heading -->
-    <div class="sidebar-heading">
-        Interface
     </div>
-
-    <li class="nav-item">
-        <a class="nav-link" href="<?=base_url('Aluno/index')?>">
-            <i class="fas fa-fw fa-school"></i>
-            <span>Aluno</span></a>
-    </li>
-
-    <li class="nav-item">
-        <a class="nav-link" href="<?=base_url('Emprestimo/index')?>">
-            <i class="fas fa-fw fa-check"></i>
-            <span>Empréstimo</span></a>
-    </li>
-
-    <li class="nav-item">
-        <a class="nav-link" href="<?=base_url('Livro/index')?>">
-            <i class="fas fa-fw fa-book"></i>
-            <span>Livro</span></a>
-    </li>
-
-    <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
-        <a class="nav-link" href="<?=base_url('Obra/index')?>">
-            <i class="fas fa-fw fa-copy"></i>
-            <span>Obra</span></a>
-    </li>
-
-    <!-- Nav Item - Charts -->
-    <li class="nav-item">
-        <a class="nav-link" href="<?=base_url('Editora/index')?>">
-            <i class="fas fa-fw fa-pen"></i>
-            <span>Editora</span></a>
-    </li>
-
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
-        <a class="nav-link" href="<?=base_url('Usuario/index')?>">
-            <i class="fas fa-fw fa-users"></i>
-            <span>Usuário</span></a>
-    </li>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider d-none d-md-block">
-
-    <!-- Sidebar Toggler (Sidebar) -->
-    <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
-    </div>
-
 </ul>
 <!-- End of Sidebar -->
+
 
 <!-- Content Wrapper -->
 <div id="content-wrapper" class="d-flex flex-column">
@@ -121,126 +118,6 @@
                         </form>
                     </div>
                 </li>
-
-                <!-- Nav Item - Alerts -->
-                 
-                <li class="nav-item dropdown no-arrow mx-1">
-                    <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-bell fa-fw"></i>
-                        <!-- Counter - Alerts -->
-                        <span class="badge badge-danger badge-counter">3+</span>
-                    </a>
-                    
-                    <!-- Dropdown - Alerts -->
-                    <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                        aria-labelledby="alertsDropdown">
-                        <h6 class="dropdown-header">
-                            Alerts Center
-                        </h6>
-                        <a class="dropdown-item d-flex align-items-center" href="#">
-                            <div class="mr-3">
-                                <div class="icon-circle bg-primary">
-                                    <i class="fas fa-file-alt text-white"></i>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="small text-gray-500">December 12, 2019</div>
-                                <span class="font-weight-bold">A new monthly report is ready to download!</span>
-                            </div>
-                        </a>
-                        <a class="dropdown-item d-flex align-items-center" href="#">
-                            <div class="mr-3">
-                                <div class="icon-circle bg-success">
-                                    <i class="fas fa-donate text-white"></i>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="small text-gray-500">December 7, 2019</div>
-                                $290.29 has been deposited into your account!
-                            </div>
-                        </a>
-                        <a class="dropdown-item d-flex align-items-center" href="#">
-                            <div class="mr-3">
-                                <div class="icon-circle bg-warning">
-                                    <i class="fas fa-exclamation-triangle text-white"></i>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="small text-gray-500">December 2, 2019</div>
-                                Spending Alert: We've noticed unusually high spending for your account.
-                            </div>
-                        </a>
-                        <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-                    </div>
-                </li>
-
-                <!-- Nav Item - Messages -->
-                <li class="nav-item dropdown no-arrow mx-1">
-                    <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-envelope fa-fw"></i>
-                        <!-- Counter - Messages -->
-                        <span class="badge badge-danger badge-counter">7</span>
-                    </a>
-                    <!-- Dropdown - Messages -->
-                    <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                        aria-labelledby="messagesDropdown">
-                        <h6 class="dropdown-header">
-                            Message Center
-                        </h6>
-                        <a class="dropdown-item d-flex align-items-center" href="#">
-                            <div class="dropdown-list-image mr-3">
-                                <img class="rounded-circle" src="<?=base_url('assets/img/undraw_profile_1.svg')?>"
-                                    alt="...">
-                                <div class="status-indicator bg-success"></div>
-                            </div>
-                            <div class="font-weight-bold">
-                                <div class="text-truncate">Hi there! I am wondering if you can help me with a
-                                    problem I've been having.</div>
-                                <div class="small text-gray-500">Emily Fowler · 58m</div>
-                            </div>
-                        </a>
-                        <a class="dropdown-item d-flex align-items-center" href="#">
-                            <div class="dropdown-list-image mr-3">
-                                <img class="rounded-circle" src="<?=base_url('assets/img/undraw_profile_2.svg')?>"
-                                    alt="...">
-                                <div class="status-indicator"></div>
-                            </div>
-                            <div>
-                                <div class="text-truncate">I have the photos that you ordered last month, how
-                                    would you like them sent to you?</div>
-                                <div class="small text-gray-500">Jae Chun · 1d</div>
-                            </div>
-                        </a>
-                        <a class="dropdown-item d-flex align-items-center" href="#">
-                            <div class="dropdown-list-image mr-3">
-                                <img class="rounded-circle" src="<?=base_url('assets/img/undraw_profile_3.svg')?>"
-                                    alt="...">
-                                <div class="status-indicator bg-warning"></div>
-                            </div>
-                            <div>
-                                <div class="text-truncate">Last month's report looks great, I am very happy with
-                                    the progress so far, keep up the good work!</div>
-                                <div class="small text-gray-500">Morgan Alvarez · 2d</div>
-                            </div>
-                        </a>
-                        <a class="dropdown-item d-flex align-items-center" href="#">
-                            <div class="dropdown-list-image mr-3">
-                                <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
-                                    alt="...">
-                                <div class="status-indicator bg-success"></div>
-                            </div>
-                            <div>
-                                <div class="text-truncate">Am I a good boy? The reason I ask is because someone
-                                    told me that people say this to all dogs, even if they aren't good...</div>
-                                <div class="small text-gray-500">Chicken the Dog · 2w</div>
-                            </div>
-                        </a>
-                        <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
-                    </div>
-                </li>
-
                 <div class="topbar-divider d-none d-sm-block"></div>
 
                 <!-- Nav Item - User Information -->
@@ -253,8 +130,9 @@
                     </a>
                     <!-- Dropdown - User Information -->
 
-                    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in text-center"
                         aria-labelledby="userDropdown">
+                        <span class=""><?=session()->get('email')?></span>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                             <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -266,4 +144,12 @@
             </ul>
 
         </nav>
+        
         <!-- End of Topbar -->
+         <!-- loading spinner -->
+        <div id="spinner" class="spinner">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+        <div class="loading" id="loading">

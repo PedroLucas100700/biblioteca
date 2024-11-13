@@ -1,39 +1,36 @@
-<div class="container">
-    <h2>Autor</h2>
-                <?=form_open("Autor/index")?>
-                <div class="float-end me-3 d-flex" role="search">
-                    <input name='pesquisa'class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search"> 
-                    <button class="btn btn-outline-success" type="submit">Pesquisar</button>
-                </div>
-                <?=form_close()?>
+<div class="container" id="container">
+    <h2 class="text-primary fw-bolder">Autor</h2>
         <!-- Button do Modal -->
-        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Novo
         </button>
         <!-- Tabela de Usuario -->
-    <table class="table">
-        <thead>
-        <tr>
-            <td>ID</td>
-            <td>NOME</td>
-        </tr>
-        </thead>
-        <tbody>
-        <?php foreach($listaAutor as $a) :?>
-                <tr>
-                    <td>
-                        <?=$a['id']?>
-                    </td>
-                    <td>
-                        <?=anchor("Autor/editar/".$a['id'],$a['nome'])?>
-                    </td>
-                </tr>
-            <?php endforeach ?>  
-        </tbody>
-    </table>
-    <div class="row">
-        <?=$pager->links('default','pager')?>
-    </div>
+        <div class="card shadow mb-4">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover display compact" id="datatable">
+                        <thead>
+                        <tr class="fw-bolder">
+                            <td>ID</td>
+                            <td>NOME</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php foreach($listaAutor as $a) :?>
+                                <tr onclick="location.href='<?=base_url('Autor/editar/'.$a['id'])?>'" role="button">
+                                    <td class="fw-bolder">
+                                        <?=$a['id']?>
+                                    </td>
+                                    <td>
+                                        <?=$a['nome']?>
+                                    </td>
+                                </tr>
+                            <?php endforeach ?>  
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

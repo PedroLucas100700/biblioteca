@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id="container">
     <h2 class="text-primary fw-bolder">Livro</h2>
         <!-- Button do Modal -->
         <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -8,7 +8,7 @@
         <div class="card shadow mb-4">
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-hover">
+                    <table class="table table-hover display compact" id="datatable">
                         <thead>
                         <tr class="fw-bolder">
                             <td>ID</td>
@@ -25,18 +25,17 @@
                                         <?=$li['id']?>
                                     </td>
                                     <td>
-                                        <?=$li['disponivel']?>
+                                        <span class="rounded fw-bolder text-light text-center margin me-3 <?=$li['class_disponivel']?>">
+                                            <?=$li['disponivel']?>
+                                        </span>
                                     </td>
                                     <td>
-                                        <?=$li['status']?>
+                                        <span class="rounded fw-bolder text-light text-center margin me-3 <?=$li['class_status']?>">
+                                            <?=$li['status']?>
+                                        </span>
                                     </td>
                                     <td>
-                                        <?php
-                                            foreach($listaObra as $obra){
-                                                $livros[$obra['id']] = $obra['titulo'];
-                                            }
-                                        ?>
-                                        <?=$livros[$li['id_obra']]?>
+                                        <?=$li['titulo']?>
                                     </td>
                                     <td>
                                         <?=$li['tombo']?>

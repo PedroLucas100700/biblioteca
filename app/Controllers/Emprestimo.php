@@ -111,6 +111,11 @@ class Emprestimo extends BaseController
     public function salvar(){
         $dados = $this->request->getPost();
         $this->EmprestimoModel->save($dados);
+        if($cadastro){
+            session()->setFlashdata('sucesso', TRUE);
+        }else{
+            session()->setFlashdata('erro', TRUE);
+        }
         $this->livroModel->update($dados['id_livro_antigo'],['disponivel' => 1]);
         $this->livroModel->update($dados['id_livro'], ['disponivel' => 0]);
         return redirect()->to('emprestimo/index');

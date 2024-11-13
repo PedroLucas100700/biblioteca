@@ -10157,7 +10157,7 @@ a:focus {
   position: absolute;
   transform: scale(0.7);
   transform-origin: top right;
-  right: .25rem;
+  right: .21rem;
   margin-top: -.25rem;
 }
 
@@ -10511,6 +10511,7 @@ a:focus {
   .sidebar {
     width: 14rem !important;
   }
+
   .sidebar .nav-item .collapse {
     position: relative;
     left: 0;
@@ -11278,4 +11279,8 @@ footer.sticky-footer .copyright {
 
 body.sidebar-toggled footer.sticky-footer {
   width: 100%;
+}
+
+.container{
+  padding-left: 5rem;
 }

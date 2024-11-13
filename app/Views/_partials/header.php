@@ -11,10 +11,9 @@
     <link href="https://cdn.datatables.net/2.1.6/css/dataTables.bootstrap5.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="<?=base_url('/assets/bootstrap/css/bootstrap.css')?>">
+    <link rel="stylesheet" href="<?=base_url('/assets/bootstrap5/css/bootstrap.css')?>">
+    <link rel="stylesheet" href="<?=base_url('/assets/bootstrap5/css/personalizacao.css')?>">
     <link rel="shortcut icon" type="imagex/png" href="<?=base_url("assets/img/sga2.png")?>">
-        <!-- Favicon -->
-        <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
 
     <!-- Custom fonts for this template-->
     <link href="<?=base_url('assets/vendor/fontawesome-free/css/all.min.css')?>" rel="stylesheet" type="text/css">
@@ -24,7 +23,13 @@
 
     <!-- Custom styles for this template-->
     <link href="<?=base_url('assets/css/sb-admin-2.min.css')?>" rel="stylesheet">
-    
+
+    <!-- Datatable css -->
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <!-- carregamento -->
+     <link rel="stylesheet" href="<?=base_url('/assets/loading/loading.css')?>">
+
     <title>Biblioteca</title>
 </head>
-<body class="bg-primary-subtle" id="page-top">
+<body class="bg-primary-subtle theme-mode" id="page-top">

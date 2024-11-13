@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id="container">
     <h2 class="text-primary fw-bolder">Editora</h2>
         <!-- Button do Modal -->
         <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -9,7 +9,7 @@
                     <div class="card shadow mb-4">
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-hover shadow-lg" id="tabela_editoras">
+                                <table class="table table-hover display compact" id="datatable">
                                     <thead>
                                     <tr class="fw-bolder">
                                         <td>ID</td>

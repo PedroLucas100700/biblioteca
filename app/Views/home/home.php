@@ -1,25 +1,17 @@
-<div class="container p-4 bg-light text-dark">
-    <h2>Bem-vindos à Biblioteca!</h2>
-    <br>
+<div class="container p-4 bg-light text-dark ml-5 mt-120" id="container">
     <div class="row p-4">
-        <div class="col-7">
-            <p>É com grande alegria que abrimos as portas deste espaço dedicado ao conhecimento, à imaginação e ao aprendizado. Aqui, 
-            vocês encontrarão não apenas livros, 
-            mas um universo de possibilidades para expandir horizontes, desafiar ideias e explorar novos mundos.
-            </p>
-            <p>Nossa biblioteca é mais do que um simples local de leitura; é um refúgio para mentes curiosas, 
-                um ponto de encontro para aqueles que buscam descobrir e compartilhar saberes. 
-                Sejam bem-vindos, estudantes, professores e funcionários, a este ambiente de aprendizado contínuo.
-            </p>
+        <div class="col-5">
             <p>
-            Que este espaço seja um farol de inspiração, onde cada página virada seja um passo 
-            em direção ao crescimento pessoal e acadêmico. 
-            Convidamos todos vocês a explorarem, questionarem e se maravilharem com o vasto acervo que temos à disposição.
+                <h2>Bem-vindos à Biblioteca!</h2>
+                <br>
+                É com grande alegria que abrimos as portas deste espaço dedicado ao conhecimento,
+                 à imaginação e ao aprendizado. Aqui, vocês encontrarão não apenas livros,
+                  mas um universo de possibilidades para expandir horizontes, desafiar ideias
+                   e explorar novos mundos.
             </p>
-            <p>
-            Sejam bem-vindos à Biblioteca, 
-            onde os sonhos ganham asas e o conhecimento se torna uma jornada sem fim.
-            </p>
+        </div>
+        <div class="col-5">
+            <img class="rounded mx-5 d-block img-thumbnail "src="<?=base_url('assets/img/logolivro.jpg')?>" alt="Bootstrap" width="400" height="500">
         </div>
     </div>
 </div>   

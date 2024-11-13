@@ -66,21 +66,25 @@
 
     <!-- Modal -->
     <?=form_open('Aluno/excluir')?>
-    <input value='<?=$aluno['id']?>'class='form-control' type="hidden" id='id' name='id'>
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-        <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <input value='<?=$aluno['id']?>'class='form-control' type="hidden" id='id' name='id'>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Você tem certeza que deseja excluir: <br>ID: <?=$aluno['id']?><br>CPF: <?=$aluno['cpf']?><br>Nome: <?=$aluno['nome']?><br>Email: <?=$aluno['email']?><br>Telefone: <?=$aluno['telefone']?><br> Turma: <?=$aluno['turma']?>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-danger">Excluir</button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="modal-body">
-            Você tem certeza que deseja excluir: <br>ID: <?=$aluno['id']?><br>CPF: <?=$aluno['cpf']?><br>Nome: <?=$aluno['nome']?><br>Email: <?=$aluno['email']?><br>Telefone: <?=$aluno['telefone']?><br> Turma: <?=$aluno['turma']?>
+        <?=form_close()?>
+        <div class="d-flex justify-content-end me-5">
+            <?=anchor("Aluno/gerar_pdf/".$aluno['id'],"Formatação",['class' => 'btn  btn-primary']);?>
         </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cancelar</button>
-            <button type="submit" class="btn btn-danger">Excluir</button>
-        </div>
-        </div>
-    </div>
-    </div>

@@ -14,7 +14,7 @@
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">Bem-vindo!</h1>
                                     </div>
 
                                     <?php if (session()->has('error')): ?>
@@ -27,7 +27,7 @@
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user"
                                                 id="email" name="email" aria-describedby="emailHelp"
-                                                placeholder="Enter Email Address..." value="<?php echo old('email'); ?>">
+                                                placeholder="Inserir Email..." value="<?php echo old('email'); ?>">
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group">
@@ -43,9 +43,6 @@
                                     <hr>
                                     <div class="text-center">
                                         <a class="small" href="forgot-password.html">Forgot Password?</a>
-                                    </div>
-                                    <div class="text-center">
-                                        <a class="small" href="register.html">Create an Account!</a>
                                     </div>
                                 </div>
                             </div>

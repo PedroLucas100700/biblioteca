@@ -48,6 +48,7 @@ class Login extends Controller
                 $this->session->set('logged_in', true);
                 $this->session->set('email', $email);
                 $this->session->set('nome',$usuario['nome']);
+                $this->session->set('acesso',$usuario['acesso']);
                 // Redirecionar para a página de dashboard
                 return redirect()->to(base_url('Home/index'));
             } else {

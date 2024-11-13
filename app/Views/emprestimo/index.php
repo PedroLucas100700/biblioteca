@@ -1,61 +1,77 @@
-    <div class="container">
+    <div class="container" id="container">
 
         <!-- Main Content -->
         <div id="content">
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
+                <!-- end alert -->
+                <div class="alert alert-success alert-dismissible <?=(session()->has('sucesso')) ? '' : 'visually-hidden'?>">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>Sucesso!</strong>  Dados salvos com sucesso!
+                </div>
+                <div class="alert alert-danger <?= (session()->has('erro')) ? '' : 'visually-hidden'?>">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>Problema!</strong> Problema ao inserir os dados!.
+                </div>
+                <!-- end alert -->
                 <h2 class="text-primary fw-bolder">Emprestimo</h2>
                     <!-- Button do Modal -->
                     <button type="button" class="btn mb-3 btn-primary text-light" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Novo
                     </button>
                     <!-- Tabela de Usuario -->
-                <table class="table table-hover shadow-lg bs-info-border-subtle">
-                    <thead>
-                    <tr class="fw-bolder">
-                        <td>ID</td>
-                        <td>DATA DE INICIO</td>
-                        <td>DATA DO FIM</td>
-                        <td>DATA DO PRAZO</td>
-                        <td>LIVRO</td>
-                        <td>ALUNO</td>
-                        <td>USUARIO</td>
-                        <td></td>
-                    </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach($listaEmprestimo as $em) :?>
-                            <tr onclick="location.href='<?=base_url('Emprestimo/editar/'.$em['id'])?>'" id="" role="button">
-                                <td class="fw-bolder text-end" id="">
-                                    <?=$em['id']?>
-                                </td>
-                                <td>
-                                
-                                <?=$em['data_inicio_formatada']?>
-                                </td>
-                                <td>
-                                    <?=$em['mensagem_data_fim']?>
-                                </td>
-                                <td>
-                                    <?=$em['data_prazo_formatada']?>
-                                </td>
+                    <div class="card shadow mb-4">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover display compact" id="datatable">
+                        <thead>
+                        <tr class="fw-bolder">
+                            <td>ID</td>
+                            <td>DATA DE INICIO</td>
+                            <td>DATA DO FIM</td>
+                            <td>DATA DO PRAZO</td>
+                            <td>LIVRO</td>
+                            <td>ALUNO</td>
+                            <td>USUARIO</td>
+                            <td></td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach($listaEmprestimo as $em) :?>
+                                <tr onclick="location.href='<?=base_url('Emprestimo/editar/'.$em['id'])?>'" id="" role="button">
+                                    <td class="fw-bolder text-end" id="">
+                                        <?=$em['id']?>
+                                    </td>
                                     <td>
-                                    <?=$em['titulo']?>
-                                </td>
-                                <td>
-                                    <?=$em['aluno']?>
-                                </td>
-                                <td>
-                                    <?=$em['usuario']?>
-                                </td>
-                                <td>
-                                    <?=$em['mensagem_devolucao']?>
-                                </td>
-                            </tr>
-                        <?php endforeach ?>  
-                    </tbody>
-                </table>
+                                    
+                                    <?=$em['data_inicio_formatada']?>
+                                    </td>
+                                    <td>
+                                        <?=$em['mensagem_data_fim']?>
+                                    </td>
+                                    <td>
+                                        <?=$em['data_prazo_formatada']?>
+                                    </td>
+                                        <td>
+                                        <?=$em['titulo']?>
+                                    </td>
+                                    <td>
+                                        <?=$em['aluno']?>
+                                    </td>
+                                    <td>
+                                        <?=$em['usuario']?>
+                                    </td>
+                                    <td>
+                                        <?=$em['mensagem_devolucao']?>
+                                    </td>
+                                </tr>
+                            <?php endforeach ?>  
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
 
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -78,7 +94,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="data_prazo">Prazo:</label>
-                                <input class='form-control' type="text" id='data_prazo' name='data_prazo' autocomplete="off">
+                                <input class='form-control' type="number" id='data_prazo' name='data_prazo' min="0" autocomplete="off">
                             </div>
                             <div class="form-group">
                                 <label for="telefone">Livro:</label>

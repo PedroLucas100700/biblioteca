@@ -1,4 +1,4 @@
-
+        </div>
         <!-- Scroll to Top Button-->
         <a class="scroll-to-top rounded" href="#page-top">
             <i class="fas fa-angle-up"></i>
@@ -57,8 +57,23 @@
         <script src="<?=base_url('assets/mask/jquery.mask.js')?>"></script>
         <script src="<?=base_url('assets/mask/mask.js')?>"></script>
 
-        <!-- input quantidade -->
-        <script src="<?=base_url('assets/jquery/input-qtd.js')?>"></script>
+        <!-- carregamento -->
+        <script src="<?=base_url('assets/loading/loading.js')?>"></script>
+
+        
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+        <script>
+            const selects = document.querySelectorAll('select');
+            selects.classList.add(' js-example-basic-single');
+            console.log(selects);
+
+            $(document).ready(function() {
+                $('.js-example-basic-single').select2();
+            });
+        </script>
+        
+        <script src="<?=base_url('assets/jquery/modal-excluir.js')?>"></script>
     </footer>
     </body>
 
